@@ -15,9 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users')
-            ->whereNotNull('type');
-        return UserResource::collection($users);
+        $users = User::all();
+        return UserResource::collection($users)->toJson();
     }
 
     /**
