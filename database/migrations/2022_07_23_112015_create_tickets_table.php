@@ -15,14 +15,19 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->string('image')->nullable();
+            $table->text('image')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->integer('user_id');
             $table->timestamps();
             $table->string('latt')->nullable();
             $table->string('long')->nullable();
+            $table->boolean('resolved')->default(false);
+            $table->boolean('help')->default(false);
+            $table->string('street')->default('Partizanski put');
+            $table->string('number')->default('9a');
+            $table->string('city')->default('Rijeka');
         });
     }
 

@@ -16,7 +16,12 @@ class Ticket extends Model
         'updated_by',
         'created_by',
         'long',
-        'latt'
+        'latt',
+        'resolved',
+        'help',
+        'street',
+        'number',
+        'city'
     ];
 
     public function user()
